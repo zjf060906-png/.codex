@@ -63,11 +63,14 @@ function resize() {
   boardX = Math.floor((width - boardSize) / 2);
   boardY = Math.floor(topBar);
 
+  const buttonGap = 10;
+  const buttonX = 18;
+  const buttonW = Math.floor((width - buttonX * 2 - buttonGap * 2) / 3);
   const buttonY = Math.min(height - 82, boardY + boardSize + 28);
   buttons = {
-    start: rect(width / 2 - 78, buttonY, 156, 46, 'START'),
-    pause: rect(18, buttonY, 112, 46, 'PAUSE'),
-    restart: rect(width - 130, buttonY, 112, 46, 'RESTART')
+    pause: rect(buttonX, buttonY, buttonW, 46, 'PAUSE'),
+    start: rect(buttonX + buttonW + buttonGap, buttonY, buttonW, 46, 'START'),
+    restart: rect(buttonX + (buttonW + buttonGap) * 2, buttonY, buttonW, 46, 'RESTART')
   };
 }
 
